@@ -7,9 +7,6 @@ class ListMyReads extends Component {
     getShelfId = shelfId => {
       return this.props.books.filter(book => book.shelf === shelfId)
     }
-    state = {
-      query: ''
-    }
     render () {
         const shelfState = [
           {
@@ -28,15 +25,10 @@ class ListMyReads extends Component {
             books: this.getShelfId('read')
           }            
         ]
-        const { books } = this.props
-        const { query } = this.state
+        const { books, bookShelfChange } = this.props
         let showBooks
+        showBooks = books
 
-        if (query){
-
-        } else {
-          showBooks = books
-        }
         console.log(showBooks)
         return (
         <div className="list-books"> 
@@ -51,6 +43,7 @@ class ListMyReads extends Component {
                       key={shelf.id}
                       bookshelfTitle={shelf.bookshelfTitle}
                       books={shelf.books}
+                      bookShelfChange={bookShelfChange}
                     />
                   )
                 })}
