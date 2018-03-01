@@ -25,11 +25,7 @@ class ListMyReads extends Component {
             books: this.getShelfId('read')
           }            
         ]
-        const { books, bookShelfChange } = this.props
-        let showBooks
-        showBooks = books
-
-        console.log(showBooks)
+        const { bookShelfChange } = this.props
         return (
         <div className="list-books"> 
             <div className="list-books-title">

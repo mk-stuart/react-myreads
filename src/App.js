@@ -6,6 +6,7 @@ import './App.css'
 import Search from './components/Search';
 
 class BooksApp extends React.Component {
+
   state = {
     /**
      * TODO: Instead of using this state variable to keep track of which page
@@ -14,8 +15,7 @@ class BooksApp extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
     //showSearchPage: false,
-    books: [],
-    unchangedBooks: []
+    books: []
   }
 
   componentDidMount(){
@@ -23,12 +23,13 @@ class BooksApp extends React.Component {
       this.setState({books})
     })
   }
-  updateShelfBook(book, shelf){  
-    console.log(book, shelf)
-    this.setState((state) => ({
-      books: state.books.filter((b) => (b.id !== book.id)).concat([book])
-    }))
-    BooksAPI.update(book,shelf)
+  updateShelfBook = (book, shelf) =>{  
+      this.setState((state) => ({
+        books: state.books.map(b => { 
+          return b.id !== book.id ? b : Object.assign({}, b, {shelf})
+        })
+      }))
+      BooksAPI.update(book,shelf)
   }
 
   render() {
