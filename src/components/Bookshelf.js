@@ -2,6 +2,10 @@ import React from 'react'
 
 class Bookshelf extends React.Component{
 
+    static PropTypes = {
+        bookShelfChange: PropTypes.func.isRequired
+    }
+
     render(){
         return(
             <div className="bookshelf">
