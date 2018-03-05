@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Bookshelf from './Bookshelf'
+import escapeRegExp from 'escape-string-regexp'
 
 class Search extends React.Component{
     state = {
@@ -16,6 +17,11 @@ class Search extends React.Component{
     }
     render(){
         const { query } = this.state
+        let showBooks
+        if(query){
+            const match = new RegExp(escapeRegExp(query), 'i')
+           // showBooks = this.props.books.filter((book) => match.test(boo.name))
+        }
         return(
             <div className="search-books">
                 <div className="search-books-bar">
