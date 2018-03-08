@@ -12,4 +12,4 @@ To get started:
 
 # Search Terms
 
-Are included the file with term to search. [Here](https://github.com/nigelzin/react-myreads/search_terms.md)
+Are included the file with term to search. [Here](https://github.com/nigelzin/react-myreads/blob/master/SEARCH_TERMS.md)
