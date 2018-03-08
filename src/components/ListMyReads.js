@@ -16,17 +16,17 @@ class ListMyReads extends Component {
         const shelfState = [
           {
             id: 'currentlyReading',
-            bookshelfTitle: 'Currently Reading',
+            bookShelfTitle: 'Currently Reading',
             books: this.getShelfId('currentlyReading')
           },
           {
             id: 'wantToRead',
-            bookshelfTitle: 'Want to Read',
+            bookShelfTitle: 'Want to Read',
             books: this.getShelfId('wantToRead')
           },
           {
             id: 'read',
-            bookshelfTitle: 'Read',
+            bookShelfTitle: 'Read',
             books: this.getShelfId('read')
           }            
         ]
@@ -42,7 +42,7 @@ class ListMyReads extends Component {
                   return (
                     <Bookshelf 
                       key={shelf.id}
-                      bookshelfTitle={shelf.bookshelfTitle}
+                      bookShelfTitle={shelf.bookShelfTitle}
                       books={shelf.books}
                       bookShelfChange={bookShelfChange}
                     />
